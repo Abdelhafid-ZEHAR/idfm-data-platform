@@ -63,6 +63,11 @@ def main():
         key=s3_key,
     )
 
+    #check dag update
+    print(
+        "dag update check"
+    )
+
 
 if __name__ == "__main__":
     main()

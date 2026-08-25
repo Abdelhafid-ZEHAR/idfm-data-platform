@@ -2,7 +2,7 @@ dags:
   gitSync:
     enabled: true
 
-    repo: https://github.com/Abdelhafid-ZEHAR/stackexchange-data-platform.git
+    repo: https://github.com/Abdelhafid-ZEHAR/idfm-data-platform.git
 
     branch: main
     ref: main
