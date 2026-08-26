@@ -2,7 +2,9 @@ from datetime import datetime
 
 from airflow import DAG
 from airflow.providers.cncf.kubernetes.operators.pod import KubernetesPodOperator
-
+from airflow.providers.databricks.operators.databricks import (
+    DatabricksRunNowOperator,
+)
 
 with DAG(
     dag_id="idfm_pipeline",
