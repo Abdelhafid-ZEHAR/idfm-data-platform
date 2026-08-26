@@ -1,0 +1,26 @@
+extraEnv: |
+  - name: AIRFLOW_CONN_DATABRICKS_DEFAULT
+    valueFrom:
+      secretKeyRef:
+        name: databricks-credentials
+        key: connection
+
+images:
+  airflow:
+    repository: idfm-airflow
+    tag: 3.2.2
+    pullPolicy: IfNotPresent
+dags:
+  gitSync:
+    enabled: true
+
+    repo: https://github.com/Abdelhafid-ZEHAR/idfm-data-platform.git
+
+    branch: main
+    ref: main
+
+    depth: 1
+
+    subPath: airflow/dags
+
+    period: 5s

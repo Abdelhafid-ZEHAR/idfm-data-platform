@@ -13,7 +13,7 @@ with DAG(
 ) as dag:
 
     ingest_idfm = KubernetesPodOperator(
-        task_id="ingest_idfm",
+        task_id="807225301812029",
 
         name="idfm-ingestion",
         namespace="default",
@@ -34,3 +34,13 @@ with DAG(
 
         is_delete_operator_pod=True,
     )
+
+    run_databricks_job = DatabricksRunNowOperator(
+        task_id="run_databricks_job",
+
+        databricks_conn_id="databricks_default",
+
+        job_id=YOUR_JOB_ID,
+    )
+
+    ingest_idfm >> run_databricks_job
