@@ -24,3 +24,4 @@ dags:
     subPath: airflow/dags
 
     period: 5s
+apiSecretKeySecretName: airflow-api-secret-key
